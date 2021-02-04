@@ -30,10 +30,11 @@ class ConvertRequisitionsPage extends Page {
     }
 
     /**
-     * Check the checkbox option for a requisition with the given program and period.
+     * Check the checkbox option for a requisition with the given program, facility and period.
      */
-    selectRequisition(program, period) {
+    selectRequisition(program, facility, period) {
         const selector = `//td[text()="${program}"]` +
+        `/following-sibling::td[text()="${facility}"]` +
         `/following-sibling::td[text()="${period}"]` +
         `/preceding-sibling::td/label/input[@type="checkbox"]`;
 

@@ -1,69 +1,51 @@
 features:
-  - name: "Initiate Requisition"
+  - name: "Login"
     scenarios:
-      - name: "Storeroom Manager should be able to initiate requisition for home facility"
+      - name: "User logs in and is brought to the home page"
+        steps:
+          - name: "I navigate to the login page"
+            duration: 26
+          - name: "submit the form"
+            duration: 13
+  - name: "Requisition"
+    scenarios:
+      - name: "User should be able to initiate requisition for home facility"
         steps:
           - name: "I click on the \"Search\" button"
-            duration: 4
+            duration: 5
           - name: "I click on the \"Proceed\" button"
-            duration: 6
-  - name: "Requisition Synchronization"
-    scenarios:
-      - name: "Storeroom Manager should be able to sync requisition with the server"
+            duration: 35
+      - name: "User should be able to sync requisition with the server"
         steps:
           - name: "I click on the \"Sync with Server\" button"
-            duration: 5
-  - name: "Submit Requisition"
-    scenarios:
-      - name: "Storeroom manager should not be able to submit the requisition with Requested quantity explanation column omitted"
+            duration: 40
+      - name: "User should be able to submit requisition for home facility"
         steps:
           - name: "I confirm the submit"
-            duration: 4
-  - name: "Authorizing Requisitions"
-    scenarios:
-      - name: "Store Manager should not be able to authorize the requisition with one required column omitted"
+            duration: 30
+      - name: "User should be able to authorize the requisition"
         steps:
-          - name: "I have navigated to a requisition for \"Lilongwe Health Center\" facility, \"ARV\" program and \"Mar2017\" period"
-            duration: 11
+          - name: "I click on the \"Search\" button"
+            duration: 5
+          - name: "I click on the \"Proceed\" button"
+            duration: 35
           - name: "I confirm the authorize"
-            duration: 2.5
-      - name: "Store manager should not be able to authorize the requisition with Requested quantity explanation column omitted"
-        steps:
-          - name: "I confirm the authorize"
-            duration: 2.5
-      - name: "Store Manager should be able to authorize a requisition"
-        steps:
-          - name: "I confirm the authorize"
-            duration: 2.5
-  - name: "Approving and rejecting Requisitions"
-    scenarios:
-      - name: "District Store Manager should be able to approve requisition for home facility"
+            duration: 30
+      - name: "Superuser should be able to approve requisition for home facility"
         steps:
           - name: "I navigate to approve requisitions screen"
-            duration: 2.5
-          - name: "I select requisition for \"Family Planning\" program and \"2018Q1\" period for approve requisitions"
-            duration: 5
-          - name: "I confirm the approval"
+            duration: 6
+          - name: "I click on the \"Search\" button"
             duration: 8
-      - name: "District Store Manager should be able to reject requisition for home facility"
-        steps:
-          - name: "I navigate to approve requisitions screen"
-            duration: 2.5
-      - name: "Psupervisor should reject approved requisition"
-        steps:
-          - name: "I navigate to approve requisitions screen"
-            duration: 2.5
-          - name: "I select requisition for \"Family Planning\" program and \"2018Q1\" period for approve requisitions"
-            duration: 5
+          - name: "I select requisition for \"Essential Meds\" program and \"Aug2017\" period for approve requisitions"
+            duration: 25
+          - name: "I confirm the approval"
+            duration: 33
   - name: "Converting requisitions to orders"
     scenarios:
-      - name: "Administrator should be able to convert one requisition to order"
+      - name: "Superuser should be able to convert one requisition to order"
         steps:
           - name: "I navigate to Convert Requisitions to Order screen"
-            duration: 3
+            duration: 6
           - name: "I confirm the convert"
-            duration: 7.5
-      - name: "Administrator should be able to convert multiple requisitions to orders"
-        steps:
-          - name: "I confirm the convert"
-            duration: 12
+            duration: 10

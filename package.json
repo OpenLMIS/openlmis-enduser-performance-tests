@@ -1,8 +1,8 @@
 {
-  "name": "openlmis-functional-tests",
+  "name": "openlmis-enduser-performance-tests",
   "version": "1.0.0",
   "description": "OpenLMIS Functional Tests - based on cucumber-boilerplate project",
-  "homepage": "https://github.com/OpenLMIS/openlmis-functional-tests",
+  "homepage": "https://github.com/OpenLMIS/openlmis-enduser-performance-tests",
   "scripts": {
     "clean": "rm -Rf ./build",
     "local-webserver": "forever start -s ./node_modules/.bin/http-server ./demo-app -s",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OpenLMIS/openlmis-functional-tests"
+    "url": "https://github.com/OpenLMIS/openlmis-enduser-performance-tests"
   },
   "keywords": [
     "webdriverio",

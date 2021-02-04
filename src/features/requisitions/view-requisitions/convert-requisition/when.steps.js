@@ -14,13 +14,8 @@ When(
 );
 
 When(
-    /^I select the requisition for "([^"]*)?" program and "([^"]*)?" period to convert to order$/,
-    (program, period) => ConvertToOrderRequisitionsPage.selectRequisition(program, period)
-);
-
-When(
-    /^I select the requisition for "([^"]*)?" program and current quarterly period to convert to order$/,
-    (program) => ConvertToOrderRequisitionsPage.selectRequisition(program, getCurrentQuarterlyPeriodName())
+    /^I select the requisition for "([^"]*)?" program and "([^"]*)?" facility and "([^"]*)?" period to convert to order$/,
+    (program, facility, period) => ConvertToOrderRequisitionsPage.selectRequisition(program, facility, period)
 );
 
 When(
