@@ -7,7 +7,10 @@ Feature: Converting requisitions to orders
         When I navigate to Convert Requisitions to Order screen
         Then I should be brought to Convert Requisitions to Order screen
 
-        When I go to the "2" page
+        When I click on the "Filter" button without waiting for loading modal
+        And I select "Lilongwe DHO Pharmacy" from the "Facility" list
+        And I wait "1" seconds for UI adjustment
+        And I click on the "Search" button
         And I select "CMST - Central" as the supplying depot for "Essential Meds" program and "Aug2017" period
         And I select the requisition for "Essential Meds" program and "LL1503 - Lilongwe DHO Pharmacy" facility and "Aug2017" period to convert to order
         And I click on the "Convert to Order" button
