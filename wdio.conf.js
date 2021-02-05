@@ -337,6 +337,13 @@ exports.config = {
         global.expect = chai.expect;
         global.assert = chai.assert;
         global.should = chai.should();
+
+        browser.throttle({
+            'offline': false,
+            'downloadThroughput': 500 * 1024 / 8 * .8,
+            'uploadThroughput': 500 * 1024 / 8 * .8,
+            'latency': 400 * 5
+        });
     },
     //
     // Hook that gets executed before the suite starts
