@@ -5,7 +5,7 @@ features:
         steps:
           - name: "I navigate to the login page"
             duration: 26
-          - name: "submit the form"
+          - name: "I submit the form"
             duration: 13
   - name: "Requisition"
     scenarios:
