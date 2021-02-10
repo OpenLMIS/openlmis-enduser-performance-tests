@@ -7,7 +7,7 @@ pipeline {
   parameters {
       booleanParam(name: 'AUTOMATED_PERFTEST', defaultValue: true, description: 'Enabling this parameter will run automated performance tests. It should be turned off after pert tests are done so this should be enabled by default. If you want to execute manual tests you can turn this off.')
       choice(choices: ['use_env', 'keep', 'wipe'], description: 'Choose to keep or wipe data (or use whatever is in the env file) during redeployment. The default option is to use whatever is in the env file. Note: if you choose wipe, the data will be lost and not retrievable, unless you have backed up before.', name: 'KEEP_OR_WIPE')
-      text(name: 'ENV_RESTORE_SNAPSHOT', defaultValue: 'perftest-mw.env', description: 'If given, the named env file will be loaded and will be used directly, including restoring from a named snapshot in that file.  Requires the appropriate env variables to be set in the env file for openlmis/restore-snapshot and openlmis/obscure-data.  Default is perftest.env, which it will also use if left blank.')
+      text(name: 'ENV_RESTORE_SNAPSHOT', defaultValue: 'perftest-mw.env', description: 'If given, the named env file will be loaded and will be used directly, including restoring from a named snapshot in that file.  Requires the appropriate env variables to be set in the env file for openlmis/restore-snapshot and openlmis/obscure-data.  Default is perftest-mw.env, which it will also use if left blank.')
   }
   options {
     buildDiscarder(logRotator(numToKeepStr: '15', artifactNumToKeepStr: '15'))
