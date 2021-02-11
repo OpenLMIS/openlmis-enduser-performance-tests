@@ -14,5 +14,6 @@ Feature: Converting requisitions to orders
         And I select "CMST - Central" as the supplying depot for "Essential Meds" program and "Aug2017" period
         And I select the requisition for "Essential Meds" program and "LL1503 - Lilongwe DHO Pharmacy" facility and "Aug2017" period to convert to order
         And I click on the "Convert to Order" button
+        And I wait "2" seconds for UI adjustment
         And I confirm the convert
         Then I should see a successful notification saying "The requisition(s) have been successfully converted to an order(s)"

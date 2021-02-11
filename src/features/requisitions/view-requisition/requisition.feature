@@ -8,10 +8,12 @@ Feature: Requisition
     Then I should be brought to the initiate requisition screen
 
     When I select "Essential Meds" from the "Program" list
+    And I wait "6" seconds for UI adjustment
     And I click on the "Search" button
     Then I should see periods table
 
-    When I click on the "Proceed" button
+    When I wait "200" seconds for UI adjustment
+    And I click on the "Proceed" button
     Then I should be redirected to requisition view screen
 
   Scenario: User should be able to sync requisition with the server
@@ -83,7 +85,9 @@ Feature: Requisition
 
   Scenario: Superuser should be able to approve requisition for home facility
     Given I have logged with username "superuser" and password "password"
-    When I navigate to approve requisitions screen
+
+    When I wait "4" seconds for UI adjustment
+    And I navigate to approve requisitions screen
     Then I should be redirected to approve requisitions screen
     And I should see a requisition for "Essential Meds" program, "Aug2017" period inside the table
 
