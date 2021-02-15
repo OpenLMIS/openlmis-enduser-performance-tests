@@ -8,7 +8,7 @@ Feature: Requisition
     Then I should be brought to the initiate requisition screen
 
     When I select "Essential Meds" from the "Program" list
-    And I wait "200" seconds for UI adjustment
+    And I wait "300" seconds for UI adjustment
     And I click on the "Search" button
     Then I should see periods table
 
@@ -85,7 +85,7 @@ Feature: Requisition
   Scenario: Superuser should be able to approve requisition for home facility
     Given I have logged with username "superuser" and password "password"
 
-    When I wait "4" seconds for UI adjustment
+    When I wait "10" seconds for UI adjustment
     And I navigate to approve requisitions screen
     Then I should be redirected to approve requisitions screen
     And I should see a requisition for "Essential Meds" program, "Aug2017" period inside the table
