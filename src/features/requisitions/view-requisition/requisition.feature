@@ -8,12 +8,11 @@ Feature: Requisition
     Then I should be brought to the initiate requisition screen
 
     When I select "Essential Meds" from the "Program" list
-    And I wait "10" seconds for UI adjustment
+    And I wait "200" seconds for UI adjustment
     And I click on the "Search" button
     Then I should see periods table
 
-    When I wait "200" seconds for UI adjustment
-    And I click on the "Proceed" button
+    When I click on the "Proceed" button
     Then I should be redirected to requisition view screen
 
   Scenario: User should be able to sync requisition with the server
