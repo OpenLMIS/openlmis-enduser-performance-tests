@@ -8,7 +8,7 @@ Feature: Requisition
     Then I should be brought to the initiate requisition screen
 
     When I select "Essential Meds" from the "Program" list
-    And I wait "300" seconds for UI adjustment
+    And I wait "10" seconds for UI adjustment
     And I click on the "Search" button
     Then I should see periods table
 
