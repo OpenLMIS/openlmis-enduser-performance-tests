@@ -86,10 +86,10 @@ pipeline {
   post {
     unstable {
       slackSend channel: '#build',
-        color: 'danger',
-        message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} FAILED (<${env.BUILD_URL}|Open>)"
-      emailext subject: "${env.JOB_NAME} - #${env.BUILD_NUMBER} ${env.STAGE_NAME} FAILED",
-        body: """<p>${env.JOB_NAME} - #${env.BUILD_NUMBER} ${env.STAGE_NAME} FAILED</p><p>Check console <a href="${env.BUILD_URL}">output</a> to view the results.</p>""",
+        color: 'warning',
+        message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} UNSTABLE (<${env.BUILD_URL}|Open>)"
+      emailext subject: "${env.JOB_NAME} - #${env.BUILD_NUMBER} ${env.STAGE_NAME} UNSTABLE",
+        body: """<p>${env.JOB_NAME} - #${env.BUILD_NUMBER} ${env.STAGE_NAME} UNSTABLE</p><p>Check console <a href="${env.BUILD_URL}">output</a> to view the results.</p>""",
         recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'DevelopersRecipientProvider']]
     }
     fixed {
