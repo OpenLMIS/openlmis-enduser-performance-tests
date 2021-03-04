@@ -40,6 +40,17 @@ pipeline {
           build job: "OpenLMIS-3.x-deploy-to-perftest-mw", propagate: true, wait: true, parameters: [string(name: 'KEEP_OR_WIPE', value: String.valueOf(KEEP_OR_WIPE)), string(name: 'ENV_RESTORE_SNAPSHOT', value: String.valueOf(ENV_RESTORE_SNAPSHOT))]
         }
     }
+    stage('Wait for manual warmup') {
+      agent none
+        when {
+          expression {
+            return !params.AUTOMATED_PERFTEST
+          }
+        }
+        steps {
+          sleep 2400
+        }
+    }
     stage ('Run tests') {
       agent none
         when {
