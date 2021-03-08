@@ -300,7 +300,7 @@ exports.config = {
         // <boolean> add cucumber tags to feature or scenario name
         tagsInTitle: false,
         // <number> timeout for step definitions
-        timeout: 900000,
+        timeout: 600000,
     },
 
     //
